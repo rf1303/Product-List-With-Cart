@@ -19,6 +19,7 @@ export function Desserts() {
                                 <source srcSet={item.image.tablet} media='(min-width: 47.938em)' />
                                 <img src={item.image.desktop} alt={`image of ${item.name}`} className="rounded-lg" />
                             </picture>
+                            <button type='button' ></button>
                         </div>
                     </div>
 
