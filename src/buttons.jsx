@@ -10,4 +10,8 @@ const Icon = () => (<svg xmlns="http://www.w3.org/2000/svg" width="10" height="1
 
 export function AddCartBtn () {
     
+    return (
+        <button type="button" className="" onClick={}></button>
+    );
+
 }

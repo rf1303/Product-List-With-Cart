@@ -1,5 +1,9 @@
+import { useJsonData } from './data-context/JsonDataContext.jsx'
 
+export function YourAddCart() {
+    const { dataProducts } = useJsonData()
 
-export function YourAddCart () {
-    console.log("YourAddCart");
+    return (
+        <div className='text-lg text-amber-50'>YourAddCart</div>
+    );
 }

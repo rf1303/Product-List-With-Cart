@@ -1,19 +1,18 @@
 import { createContext, useContext, useReducer } from 'react';
-import { useDataJson } from './DataJson.jsx';
+import { YourAddCart } from '../YourCartAdd.jsx'
 
 const AddCartContext = createContext();
 const initialState = {
     items:[]
 };
 
-const JsonDataContext = createContext();
 
 export const AddCartProvider = ({ children }) => {
     const [state, dispatch] = useReducer(YourAddCart, initialState)
     
     return (
         <AddCartContext.Provider value={{ 
-            state, dispatch, jsonData
+            state, dispatch
         }}>{ children} </AddCartContext.Provider>
     );
 }
@@ -26,10 +25,4 @@ export const useAddCart = () => {
     return context;
 }
 
-export const JsonDataProvider = ({ children }) => {
-    const { jsonData } = useDataJson();
 
-    return (
-     
-    );
-}

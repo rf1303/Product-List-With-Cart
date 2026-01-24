@@ -1,16 +1,17 @@
-import { useState } from 'react'
-import { useDataJson } from './DataJson.jsx';
+import { JsonDataProvider } from './data-context/JsonDataContext.jsx';
+import { AddCartProvider } from './data-context/CartOrderData.jsx';
+import { YourAddCart } from './YourCartAdd.jsx'
+import { Desserts } from './Desserts.jsx';
 
 function App() {
-    const { jsonData } = useDataJson();
-    console.log('jsonData App:', jsonData)
 
     return (
-        <>
-            <div>
-
-            </div>
-        </>
+        <JsonDataProvider>
+            <AddCartProvider>
+                <Desserts />
+                <YourAddCart />
+            </AddCartProvider>
+        </JsonDataProvider>
     )
 }
 

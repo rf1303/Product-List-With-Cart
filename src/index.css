@@ -53,6 +53,8 @@ button {
     --text-preset-2: 1.5rem;
     --text-preset-3: 1rem;
     --text-preset-4: .875rem;
+
+    --spacing-clampImg: clamp(13.25rem, 12.6136rem + 3.1818vw, 15rem);
 }
 
 
