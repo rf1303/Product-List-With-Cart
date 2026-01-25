@@ -31,13 +31,13 @@ body,
 }
 
 
-button {
-    display: block;
-    font-family: inherit;
-    font-size: inherit;
-    color: inherit;
-    border: none;
-}
+/* button { */
+/*     display: block; */
+/*     font-family: inherit; */
+/*     font-size: inherit; */
+/*     color: inherit; */
+/*     border: none; */
+/* } */
 
 @theme {
     --color-red: hsl(14, 86%, 42%); 
