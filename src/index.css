@@ -19,6 +19,16 @@ body {
     -moz-box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'redHatText';
+    src: url('../public/assets/fonts/RedHatText-VariableFont_wght.woff2'),
+        url('../public/assets/fonts/RedHatText-VariableFont_wght.ttf');
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: normal;
+}
+
+
 html {
     scroll-behavior: smooth;
 }
@@ -28,16 +38,8 @@ body,
     min-height: 100vh;
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
+    font-family: 'redHatText', sans-serif;
 }
-
-
-/* button { */
-/*     display: block; */
-/*     font-family: inherit; */
-/*     font-size: inherit; */
-/*     color: inherit; */
-/*     border: none; */
-/* } */
 
 @theme {
     --color-red: hsl(14, 86%, 42%); 
@@ -53,6 +55,8 @@ body,
     --text-preset-2: 1.5rem;
     --text-preset-3: 1rem;
     --text-preset-4: .875rem;
+
+    --font-redHatText: 'redHatText', sans-serif;
 
     --spacing-clampImg: clamp(13.25rem, 12.6136rem + 3.1818vw, 15rem);
 }

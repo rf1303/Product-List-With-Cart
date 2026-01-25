@@ -1,35 +1,35 @@
 import { AddCartBtn } from './buttons.jsx';
 import { useJsonData } from './data-context/JsonDataContext.jsx'
+import { YourAddCart } from './YourCartAdd.jsx'
 
 
 export function Desserts() {
     const { dataProducts } = useJsonData()
 
     return (
-        <main className='bg-rose-50'>
-            <header>
-                <h1 className=''>Desserts</h1>
+        <main className='grid items-center justify-items-center gap-8'>
+            <header className='w-full max-w-82.5 text-left'>
+                <h1 className='text-rose-900 text-preset-1 font-bold'>Desserts</h1>
             </header>
-            <div className='grid items-center justify-items-center gap-6'>
+            <div className='w-full max-w-82.5 grid items-center justify-items-center gap-6'>
                 {dataProducts.map((item) => (
                     <div key={item.id} className='w-full max-w-82.5'>
                         <div className=''>
                             <picture>
                                 <source srcSet={item.image.desktop} media='(min-width: 80em)' />
                                 <source srcSet={item.image.tablet} media='(min-width: 47.938em)' />
-                                <img src={item.image.desktop} alt={`image of ${item.name}`} className="w-full  max-w-82.5 h-clampImg rounded-xl" />
+                                <img src={item.image.desktop} alt={`image of ${item.name}`} className="w-full  max-w-82.5 h-clampImg rounded-xl shadow-md/30 shadow-rose-900" />
                             </picture>
                             <div className='flex items-center justify-center transform -translate-y-1/2'>
-                                <AddCartBtn dataProducts={item}/>
+                                <AddCartBtn dataProducts={item} />
                             </div>
                         </div>
-                        <div className=''>
+                        <div className='grid gap-1'>
                             <p className='text-rose-500 text-preset-4 font-normal'>{item.category}</p>
                             <p className='text-rose-900 text-preset-3 font-semibold'>{item.name}</p>
-                            <p className='text-red text-preset-3 font-semibold'>${item.price}</p>
+                            <p className='text-red text-preset-3 font-semibold'>${item.price.toFixed(2)}</p>
                         </div>
                     </div>
-
                 ))}
             </div>
         </main>
