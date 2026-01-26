@@ -1,14 +1,11 @@
 import { createContext, useContext, useReducer } from 'react';
-import { YourAddCart } from '../YourCartAdd.jsx'
+import { cartReducer, initialState } from '../ButtonsCarts.jsx'
 
 const AddCartContext = createContext();
-const initialState = {
-    items:[]
-};
 
 
 export const AddCartProvider = ({ children }) => {
-    const [state, dispatch] = useReducer(YourAddCart, initialState)
+    const [state, dispatch] = useReducer(cartReducer, initialState)
     
     return (
         <AddCartContext.Provider value={{ 

@@ -11,7 +11,7 @@ export function Desserts() {
             <header className='w-full max-w-82.5 text-left'>
                 <h1 className='text-rose-900 text-preset-1 font-bold'>Desserts</h1>
             </header>
-            <div className='w-full max-w-82.5 grid items-center justify-items-center gap-6'>
+            <div className='w-full max-w-82.5 grid items-center justify-items-center gap-6 md:grid-col[repeat(3,13.333rem)] xl:grid-col[repeat(3,15.667rem)]'>
                 {dataProducts.map((item) => (
                     <div key={item.id} className='w-full max-w-82.5'>
                         <div className=''>
