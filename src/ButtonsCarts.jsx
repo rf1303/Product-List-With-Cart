@@ -8,7 +8,6 @@ export function cartReducer(state, action) {
             const cartProducts = state.items.find(
                 item => item.name === action.payload.name
             );
-
             if (cartProducts) {
                 return {
                     ...state,
@@ -19,13 +18,11 @@ export function cartReducer(state, action) {
                     )
                 };
             }
-
             return {
                 ...state,
                 items: [...state.items, { ...action.payload, quantity: 1 }]
             };
         }
-
         case "INCREMENT":
             return {
                 ...state,
@@ -35,7 +32,6 @@ export function cartReducer(state, action) {
                         : item
                 )
             };
-
         case "DECREMENT":
             return {
                 ...state,
@@ -46,6 +42,11 @@ export function cartReducer(state, action) {
                             : item
                     )
                     .filter(item => item.quantity > 0)
+            };
+        case "REMOVE":
+           return {
+                ...state,
+                items: state.items.filter(item => item.id !== action.id)
             };
 
         default:

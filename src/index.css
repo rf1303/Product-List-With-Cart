@@ -42,6 +42,8 @@ body,
 }
 
 @theme {
+    --breakpoint-xs: 28.75rem;
+
     --color-red: hsl(14, 86%, 42%);
     --color-rose-900: hsl(14, 65%, 9%);
     --color-rose-500: hsl(12, 20%, 44%);
@@ -63,6 +65,10 @@ body,
 
 .increment__decrement {
     @apply flex items-center justify-center w-5 h-5 border border-white rounded-full
+}
+
+.icon__remove {
+@apply w-5 h-5 border border-rose-400 rounded-full text-rose-400 flex items-center justify-center;
 }
 
 /* @media (prefers-color-scheme: light) { */
