@@ -11,7 +11,7 @@ export function YourAddCart() {
         dispatch({ type: "REMOVE", id })
     };
     return (
-        <div className='bg-white mx-6 p-6 rounded-2xl font-redHatText grid gap-6'>
+        <div className='bg-white mx-6 p-6 rounded-2xl font-redHatText flex flex-col gap-6 xl:max-h-fit xl:mx-0'>
             <h2 className='text-red text-preset-2 font-bold'>Your Cart ({state.items.length})</h2>
             <div className='divide-y divide-rose-100'>
                 {state.items.length === 0 ? (
