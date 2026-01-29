@@ -33,6 +33,10 @@ html {
     scroll-behavior: smooth;
 }
 
+[popover]:popover-open {
+  overflow: hidden;
+}
+
 body,
 #root {
     min-height: 100vh;

@@ -1,9 +1,16 @@
+import { useState } from 'react';
 import { IconCarbonNeutral, IconEmptyCart, IconRemove } from '../public/assets/svg/IconSvg.jsx';
 import { useAddCart } from './data-context/CartOrderData.jsx'
+import { ConfirmOrderModal } from './ConfirmModal.jsx'
+import { YourAddCartReset } from './YourCartReset.jsx'
 
 export function YourAddCart() {
     const { state, dispatch } = useAddCart();
-    const totalItems = state.items.reduce((sum, item) => sum + item.quantity, 0);
+    const [modalConfirm, setModalConfirm] = useState(false);
+
+    const handleModalConfirm = () => {
+        setModalConfirm(true);
+    }
 
     const handleRemove = (id) => {
         dispatch({ type: "REMOVE", id })
@@ -28,7 +35,7 @@ export function YourAddCart() {
                                     <span className='text-rose-500'>${(item.price * item.quantity).toFixed(2)}</span>
                                 </div>
                             </div>
-                            <button typeof='button' onClick={() => handleRemove(item.id)}
+                            <button type='button' onClick={() => handleRemove(item.id)}
                                 className='icon__remove'><IconRemove /></button>
                         </div>
                     )))}
@@ -50,7 +57,8 @@ export function YourAddCart() {
                             <span className='text-preset-4 text-rose-900 font-normal leading-loose'>This is a <span className='font-bold'>Carbon-neutral</span> delivery</span>
 
                         </div>
-                        <button typeof='button' className='bg-red text-preset-3 font-semibold capitalize rounded-full py-4' >comfirm order</button>
+                        <button type='button' className='bg-red text-preset-3 font-semibold capitalize rounded-full py-4' onClick={handleModalConfirm} >confirm order</button>
+                        {/* <div id='confirm__modal' popover className='absolute bottom-0 left-0 bg-white font-redHatText w-full max-h-[80vh] pt-10 pb-6 px-6 backdrop:bg-black/20 overflow-y-hidden'><ConfirmOrderModal /></div> */}
                     </>
                 )}
         </div>

@@ -1,13 +1,12 @@
 import { AddCartBtn } from './buttons.jsx';
 import { useJsonData } from './data-context/JsonDataContext.jsx'
-import { YourAddCart } from './YourCartAdd.jsx'
 
 
 export function Desserts() {
     const { dataProducts } = useJsonData()
 
     return (
-        <main className='  px-6 grid items-center justify-items-center gap-8 md:px-10'>
+        <main className='relative px-6 grid items-center justify-items-center gap-8 md:px-10'>
             <header className='w-full max-w-82.5 text-left'>
                 <h1 className='text-rose-900 text-preset-1 font-bold'>Desserts</h1>
             </header>
