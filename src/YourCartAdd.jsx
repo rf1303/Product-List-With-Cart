@@ -7,12 +7,7 @@ import { YourAddCartReset } from './YourCartReset.jsx'
 export function YourAddCart() {
     const { state, dispatch } = useAddCart();
     const [modalConfirm, setModalConfirm] = useState(false);
-
-    const handleModalConfirm = () => {
-        console.log('modalConfirm:', modalConfirm)
-        setModalConfirm(true);
-    }
-
+    console.log('modalConfirm Inicio:', modalConfirm)
     const handleRemove = (id) => {
         dispatch({ type: "REMOVE", id })
     };
@@ -59,8 +54,7 @@ export function YourAddCart() {
 
                         </div>
                         <button type='button' className='bg-red text-preset-3 font-semibold capitalize rounded-full py-4' onClick={() => setModalConfirm(true)} >confirm order</button>
-                        <ConfirmOrderModal open={modalConfirm} onClose={() => setModalConfirm(false)} />
-                        {/* <div id='confirm__modal' popover className='absolute bottom-0 left-0 bg-white font-redHatText w-full max-h-[80vh] pt-10 pb-6 px-6 backdrop:bg-black/20 overflow-y-hidden'><ConfirmOrderModal /></div> */}
+                        { modalConfirm && <ConfirmOrderModal open={modalConfirm} onClose={() => setModalConfirm(false)} />}
                     </>
                 )}
         </div>
