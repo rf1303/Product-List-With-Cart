@@ -7,7 +7,6 @@ import { YourAddCartReset } from './YourCartReset.jsx'
 export function YourAddCart() {
     const { state, dispatch } = useAddCart();
     const [modalConfirm, setModalConfirm] = useState(false);
-    console.log('modalConfirm Inicio:', modalConfirm)
     const handleRemove = (id) => {
         dispatch({ type: "REMOVE", id })
     };
@@ -54,7 +53,7 @@ export function YourAddCart() {
 
                         </div>
                         <button type='button' className='bg-red text-preset-3 font-semibold capitalize rounded-full py-4' onClick={() => setModalConfirm(true)} >confirm order</button>
-                        { modalConfirm && <ConfirmOrderModal open={modalConfirm} onClose={() => setModalConfirm(false)} />}
+                        {modalConfirm && <ConfirmOrderModal open={modalConfirm} onClose={() => setModalConfirm(false)} />}
                     </>
                 )}
         </div>
