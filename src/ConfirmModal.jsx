@@ -10,6 +10,7 @@ export const ConfirmOrderModal = ({open, onClose}) => {
         const confirm = confirmModalRef.current;
         if(!confirm) return;
         if (open && !confirm.open) {
+            console.log('confirm open:', confirm)
             confirm.showModal();
         }
         if (!open && confirm.open) {
@@ -21,7 +22,7 @@ export const ConfirmOrderModal = ({open, onClose}) => {
     return (
         <dialog ref={confirmModalRef} onClose={onClose} 
             onClick={(e) => {if (e.target === confirmModalRef.current) onClose();}}
-                className='grid items-end p-6 pt-10'>
+                className='fixed inset-0 w-full bg-white backdrop:bg-balck/20 grid items-end p-6 pt-10'>
             <header className=''>
                 <span className='w-10.5 h-10.5'><IconConfirmed /></span>
                 <h3 className='text-rose-900 text-preset-1 font-bold capitalize'>order confirmed</h3>
