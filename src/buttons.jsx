@@ -22,7 +22,7 @@ export function AddCartBtn({ dataProducts }) {
                 <IconAddCart /> Add to Cart
             </button>)
                 : (
-                    <div className='btn__incDec bg-red flex items-center justify-between w-40 h-11 px-3 rounded-full shadow-md/30 shadow-rose-900 hover:z-40 hover:bg-red-h focus:bg-red-h ' 
+                    <div className='btn__incDec bg-red flex items-center justify-between w-40 h-11 px-3 rounded-full shadow-md/30 shadow-rose-900 hover:bg-red-h focus:bg-red-h ' 
                          role="group" 
                          aria-label={`Quantity controls for ${dataProducts.name}, current quantity: ${cartProduct.quantity}`}>
                         <button type="button" onClick={ handleDecrement }
@@ -33,7 +33,7 @@ export function AddCartBtn({ dataProducts }) {
                             className='increment__decrement'
                             aria-label={`Add one more ${dataProducts.name} to cart`}><IconIncrement /></button>
                     </div>
-                )};
+                )}
         </>
     );
 
