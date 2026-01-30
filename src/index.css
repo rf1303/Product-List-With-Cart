@@ -40,6 +40,7 @@ body,
     --breakpoint-xs: 28.75rem;
 
     --color-red: hsl(14, 86%, 42%);
+    --color-red-h: hsl(14, 86%, 32%);
     --color-rose-900: hsl(14, 65%, 9%);
     --color-rose-500: hsl(12, 20%, 44%);
     --color-rose-400: hsl(7, 20%, 60%);
@@ -59,7 +60,7 @@ body,
 }
 
 .increment__decrement {
-    @apply flex items-center justify-center w-5 h-5 border border-white rounded-full
+    @apply flex items-center justify-center w-5 h-5 border border-white rounded-full text-rose-50 hover:bg-white hover:text-rose-900 focus-visible:bg-white focus-visible:text-rose-900 focus-visible:ring-2 focus-visible:ring-rose-900;
 }
 
 .icon__remove {

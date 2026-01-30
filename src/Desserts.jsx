@@ -10,7 +10,7 @@ export function Desserts() {
             <header className='w-full max-w-82.5 text-left'>
                 <h1 className='text-rose-900 text-preset-1 font-bold'>Desserts</h1>
             </header>
-<div className='w-full grid crid-cols-1 xs:grid-cols-[repeat(auto-fill,minmax(13.333rem,1fr))] items-center justify-items-center gap-6 xl:grid-cols-[repeat(3,15.667rem)] md:gap-x-6 md:gap-y-8'>
+            <section className='w-full grid crid-cols-1 xs:grid-cols-[repeat(auto-fill,minmax(13.333rem,1fr))] items-center justify-items-center gap-6 xl:grid-cols-[repeat(3,15.667rem)] md:gap-x-6 md:gap-y-8' aria-label="Dessert products">
                 {dataProducts.map((item) => (
                     <div key={item.id} className='w-full max-w-82.5'>
                         <div className=''>
@@ -30,7 +30,7 @@ export function Desserts() {
                         </div>
                     </div>
                 ))}
-            </div>
+            </section>
         </main>
     );
 

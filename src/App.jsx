@@ -8,10 +8,12 @@ function App() {
     return (
         <JsonDataProvider>
             <AddCartProvider>
-                <div className='bg-rose-50 font-redHatText py-6 md:py-10 xl:py-22 xl:grid xl:grid-cols-[800px_384px] xl:justify-center xl:gap-8 '>
+                <main id="main-content" className='bg-rose-50 font-redHatText py-6 md:py-10 xl:py-22 xl:grid xl:grid-cols-[800px_384px] xl:justify-center xl:gap-8 ' role="main" aria-label="Product catalog and shopping cart">
                     <Desserts />
-                    <YourAddCart />
-                </div>
+                    <div id="cart-content">
+                        <YourAddCart />
+                    </div>
+                </main>
             </AddCartProvider>
         </JsonDataProvider>
     )

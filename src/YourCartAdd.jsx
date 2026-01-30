@@ -16,17 +16,17 @@ export function YourAddCart() {
     }
 
     return (
-        <div className='bg-white mx-6 p-6 rounded-2xl font-redHatText flex flex-col gap-6 xl:max-h-fit xl:mx-0'>
+        <div className='bg-white mx-6 p-6 rounded-2xl font-redHatText flex flex-col gap-6 xl:max-h-fit xl:mx-0' role="region" aria-label="Shopping cart">
             <h2 className='text-red text-preset-2 font-bold'>Your Cart ({state.items.length})</h2>
-            <div className='divide-y divide-rose-100 max-h-103 overflow-y-auto'>
+            <div className='divide-y divide-rose-100 max-h-103 overflow-y-auto' role="list" aria-label="Cart items">
                 {state.items.length === 0 ? (
-                    <div className='grid items-center justify-items-center gap-4'>
+                    <div className='grid items-center justify-items-center gap-4' role="listitem">
                         <IconEmptyCart />
                         <span className='text-preset-4 text-rose-500'>Your add item will appear here</span>
                     </div>
                 )
                     : (state.items.map(item => (
-                        <div key={item.id} className='py-4 flex items-center justify-between '>
+                        <div key={item.id} className='py-4 flex items-center justify-between ' role="listitem">
                             <div className='text-preset-4 font-semibold grid gap-2'>
                                 <h3 className='text-preset-4 text-rose-900 '>{item.name}</h3>
                                 <div className='flex items-center justify-start gap-2'>
@@ -36,7 +36,8 @@ export function YourAddCart() {
                                 </div>
                             </div>
                             <button type='button' onClick={() => handleRemove(item.id)}
-                                className='icon__remove'><IconRemove /></button>
+                                className='icon__remove'
+                                aria-label={`Remove ${item.name} from cart`}><IconRemove /></button>
                         </div>
                     )))}
             </div>
@@ -57,8 +58,13 @@ export function YourAddCart() {
                             <span className='text-preset-4 text-rose-900 font-normal leading-loose'>This is a <span className='font-bold'>Carbon-neutral</span> delivery</span>
 
                         </div>
-                        <button type='button' className='bg-red text-red-50 text-preset-3 font-semibold capitalize rounded-full py-4' onClick={() => setModalConfirm(true)} >confirm order</button>
+                        <button type='button' className='bg-red text-red-50 text-preset-3 font-semibold capitalize rounded-full py-4 hover:bg-red-h focus:bg-red-h ' 
+                                onClick={() => setModalConfirm(true)}
+                                aria-label={`Confirm order of ${state.items.length} items with total $${state.items.reduce((acc, curr) => acc + curr.price * curr.quantity, 0).toFixed(2)}`} >confirm order</button>
                         {modalConfirm && <ConfirmOrderModal open={modalConfirm} onClose={handleCloseConfirm} />}
+                        <div role="status" aria-live="polite" aria-atomic="true" className="sr-only">
+                            Cart updated: {state.items.length} items, total: ${state.items.reduce((acc, curr) => acc + curr.price * curr.quantity, 0).toFixed(2)}
+                        </div>
                     </>
                 )}
         </div>

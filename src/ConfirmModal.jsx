@@ -25,18 +25,20 @@ export const ConfirmOrderModal = ({ open, onClose }) => {
     return (
         <dialog ref={confirmModalRef} onClose={onClose}
             onClick={(e) => { if (e.target === confirmModalRef.current) onClose(); }}
-            className='fixed inset-0 w-screen h-screen max-w-none max-h-none p-0 m-0 bg-transparent flex items-end justify-center  md:items-center'>
+            className='fixed inset-0 w-screen h-screen max-w-none max-h-none p-0 m-0 bg-transparent flex items-end justify-center  md:items-center'
+            aria-labelledby="modal-title"
+            aria-describedby="modal-description">
             <div className='bg-white w-full max-h-[90vh] p-6 pt-10 rounded-t-2xl grid gap-8 md:max-w-172 md:max-h-172  md:rounded-2xl md:p-10 xl:max-w-148'>
                 <header className=''>
-                    <span className='w-10.5 h-10.5'><IconConfirmed /></span>
-                    <h3 className='text-rose-900 text-preset-1 font-bold leading-tight capitalize'>order confirmed</h3>
-                    <p className='text-rose-500 text-preset-3 font-normal'>We hope you enjoy your food!</p>
+                    <span className='w-10.5 h-10.5' aria-hidden="true"><IconConfirmed /></span>
+                    <h3 id="modal-title" className='text-rose-900 text-preset-1 font-bold leading-tight capitalize'>order confirmed</h3>
+                    <p id="modal-description" className='text-rose-500 text-preset-3 font-normal'>We hope you enjoy your food!</p>
                 </header>
-                <div className='bg-rose-50 p-6 rounded-xl'>
-                    <div className='divide-y divide-rose-100 max-h-72 overflow-y-auto xl:max-h-74'>
+                <div className='bg-rose-50 p-6 rounded-xl' role="region" aria-label="Order summary">
+                    <div className='divide-y divide-rose-100 max-h-72 overflow-y-auto xl:max-h-74' role="list" aria-label="Ordered items">
                         {state.items.map(item => (
-                            <div key={item.id} className='py-2 flex items-center justify-between '>
-                                <img src={item.image.thumbnail} alt={`imgage ${item.name}`}
+                            <div key={item.id} className='py-2 flex items-center justify-between ' role="listitem">
+                                <img src={item.image.thumbnail} alt={`${item.name} dessert`}
                                     className='w-12 h-12 rounded-lg' />
                                 <div className='text-preset-4 font-semibold grid gap-2'>
                                     <h3 className='text-preset-4 text-rose-900 '>{item.name}</h3>
@@ -62,7 +64,7 @@ export const ConfirmOrderModal = ({ open, onClose }) => {
                     </div>
 
                 </div>
-                <button type='button' onClick={handleReset} className='w-full py-4 bg-red text-white text-preset-3 font-bold capitalize rounded-full'>start new order</button>
+                <button type='button' onClick={handleReset} className='w-full py-4 bg-red text-white text-preset-3 font-bold capitalize rounded-full hover:bg-red-h focus:bg-red-h ' aria-label="Start new order and close confirmation">start new order</button>
             </div>
 
         </dialog>
