@@ -50,7 +50,7 @@ export const ConfirmOrderModal = ({ open, onClose }) => {
                                 <span className='text-rose-500'>${(item.price * item.quantity).toFixed(2)}</span>
                             </div>
 
-                        ))};
+                        ))}
 
                     </div>
                     <div className='w-full h-px bg-rose-100'></div>
