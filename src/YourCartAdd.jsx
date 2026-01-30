@@ -10,10 +10,15 @@ export function YourAddCart() {
     const handleRemove = (id) => {
         dispatch({ type: "REMOVE", id })
     };
+    const handleCloseConfirm = () => {
+        dispatch({ type: "RESET" });
+        setModalConfirm(false);
+    }
+
     return (
         <div className='bg-white mx-6 p-6 rounded-2xl font-redHatText flex flex-col gap-6 xl:max-h-fit xl:mx-0'>
             <h2 className='text-red text-preset-2 font-bold'>Your Cart ({state.items.length})</h2>
-            <div className='divide-y divide-rose-100'>
+            <div className='divide-y divide-rose-100 max-h-103 overflow-y-auto'>
                 {state.items.length === 0 ? (
                     <div className='grid items-center justify-items-center gap-4'>
                         <IconEmptyCart />
@@ -52,8 +57,8 @@ export function YourAddCart() {
                             <span className='text-preset-4 text-rose-900 font-normal leading-loose'>This is a <span className='font-bold'>Carbon-neutral</span> delivery</span>
 
                         </div>
-                        <button type='button' className='bg-red text-preset-3 font-semibold capitalize rounded-full py-4' onClick={() => setModalConfirm(true)} >confirm order</button>
-                        {modalConfirm && <ConfirmOrderModal open={modalConfirm} onClose={() => setModalConfirm(false)} />}
+                        <button type='button' className='bg-red text-red-50 text-preset-3 font-semibold capitalize rounded-full py-4' onClick={() => setModalConfirm(true)} >confirm order</button>
+                        {modalConfirm && <ConfirmOrderModal open={modalConfirm} onClose={handleCloseConfirm} />}
                     </>
                 )}
         </div>

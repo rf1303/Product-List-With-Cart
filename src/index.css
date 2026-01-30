@@ -1,10 +1,5 @@
 @import "tailwindcss";
 
-:root {
-    color-scheme: light dark;
-}
-
-
 body {
     margin: 0;
     padding: 0;
@@ -68,12 +63,55 @@ body,
 }
 
 .icon__remove {
-@apply w-5 h-5 border border-rose-400 rounded-full text-rose-400 flex items-center justify-center;
+    @apply w-5 h-5 border border-rose-400 rounded-full text-rose-400 flex items-center justify-center;
 }
 
-/* @media (prefers-color-scheme: light) { */
-/*   :root { */
-/*     color: #213547; */
-/*     background-color: #ffffff; */
-/*   } */
-/*   } */
+dialog {
+    opacity: 0;
+    transform: scale(.2) translateY(90deg);
+    transition-property: opacity transform overlay display;
+    transition-duration: .4s;
+    transition-behavior: allow-discrete;
+}
+
+dialog[open] {
+    opacity: 1;
+    transform: scale(1) rotateY(0);
+}
+
+@starting-style {
+    dialog {
+        opacity: 0;
+        transform: scale(.6) rotateY(90deg);
+    }
+}
+
+dialog::backdrop {
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0);
+    transition-property: opacity transform overlay display;
+    transition-duration: .4s;
+    transition-behavior: allow-discrete;
+}
+
+dialog[open]::backdrop {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.btn__incDec {
+    opacity: 1;
+    transition-property: opacity transform overlay display;
+    transition-duration: .4s;
+    transition-behavior: allow-discrete;
+}
+
+@starting-style {
+    dialog[open]::backdrop {
+        opacity: 0;
+        background-color: rgba(0, 0, 0, 0);
+    }
+    .btn__incDec {
+        opacity: 0;
+    }
+}

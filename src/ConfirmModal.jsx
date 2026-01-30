@@ -4,7 +4,12 @@ import { useAddCart } from './data-context/CartOrderData.jsx';
 
 export const ConfirmOrderModal = ({ open, onClose }) => {
     const confirmModalRef = useRef(null)
-    const { state } = useAddCart();
+    const { state, dispatch } = useAddCart();
+
+    const handleReset = () => {
+        dispatch({ type: "RESET" });
+        onClose();
+    }
 
     useEffect(() => {
         const confirm = confirmModalRef.current;
@@ -17,11 +22,10 @@ export const ConfirmOrderModal = ({ open, onClose }) => {
         }
     }, [open])
 
-
     return (
         <dialog ref={confirmModalRef} onClose={onClose}
             onClick={(e) => { if (e.target === confirmModalRef.current) onClose(); }}
-            className='fixed inset-0 w-screen h-screen max-w-none max-h-none p-0 m-0 bg-transparent flex items-end justify-center backdrop:bg-black/50 md:items-center'>
+            className='fixed inset-0 w-screen h-screen max-w-none max-h-none p-0 m-0 bg-transparent flex items-end justify-center  md:items-center'>
             <div className='bg-white w-full max-h-[90vh] p-6 pt-10 rounded-t-2xl grid gap-8 md:max-w-172 md:max-h-172  md:rounded-2xl md:p-10 xl:max-w-148'>
                 <header className=''>
                     <span className='w-10.5 h-10.5'><IconConfirmed /></span>
@@ -58,7 +62,7 @@ export const ConfirmOrderModal = ({ open, onClose }) => {
                     </div>
 
                 </div>
-                <button type='button' onClick={onClose} className='w-full py-4 bg-red text-white text-preset-3 font-bold capitalize rounded-full'>start new order</button>
+                <button type='button' onClick={handleReset} className='w-full py-4 bg-red text-white text-preset-3 font-bold capitalize rounded-full'>start new order</button>
             </div>
 
         </dialog>

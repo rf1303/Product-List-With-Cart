@@ -21,7 +21,7 @@ export function AddCartBtn({ dataProducts }) {
                 <IconAddCart /> Add to Cart
             </button>)
                 : (
-                    <div className='bg-red flex items-center justify-between w-40 h-11 px-3 rounded-full shadow-md/30 shadow-rose-900 '>
+                    <div className='btn__incDec bg-red flex items-center justify-between w-40 h-11 px-3 rounded-full shadow-md/30 shadow-rose-900 '>
                         <button type="button" onClick={ handleDecrement }
                             className='increment__decrement'><IconDecrement /></button>
                         <span className='text-preset-4 text-white font-semibold'>{cartProduct.quantity}</span>

@@ -5,19 +5,19 @@ export const initialState = {
 export function cartReducer(state, action) {
     switch (action.type) {
         case "ADD": {
-            const cartProducts = state.items.find(
-                item => item.name === action.payload.name
-            );
-            if (cartProducts) {
-                return {
-                    ...state,
-                    items: state.items.map(item =>
-                        item.name === action.payload.name
-                            ? { ...item, quantity: item.quantity + 1 }
-                            : item
-                    )
-                };
-            }
+            // const cartProducts = state.items.find(
+            //     item => item.name === action.payload.name
+            // );
+            // if (cartProducts) {
+            //     return {
+            //         ...state,
+            //         items: state.items.map(item =>
+            //             item.name === action.payload.name
+            //                 ? { ...item, quantity: item.quantity + 1 }
+            //                 : item
+            //         )
+            //     };
+            // }
             return {
                 ...state,
                 items: [...state.items, { ...action.payload, quantity: 1 }]
@@ -44,10 +44,13 @@ export function cartReducer(state, action) {
                     .filter(item => item.quantity > 0)
             };
         case "REMOVE":
-           return {
+            return {
                 ...state,
                 items: state.items.filter(item => item.id !== action.id)
             };
+
+        case "RESET":
+            return initialState;
 
         default:
             return state;
