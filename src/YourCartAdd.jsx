@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { IconCarbonNeutral, IconEmptyCart, IconRemove } from '../public/assets/svg/IconSvg.jsx';
 import { useAddCart } from './data-context/CartOrderData.jsx'
 import { ConfirmOrderModal } from './ConfirmModal.jsx'
-import { YourAddCartReset } from './YourCartReset.jsx'
 
 export function YourAddCart() {
     const { state, dispatch } = useAddCart();
