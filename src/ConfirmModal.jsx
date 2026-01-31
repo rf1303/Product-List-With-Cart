@@ -28,7 +28,7 @@ export const ConfirmOrderModal = ({ open, onClose }) => {
             className='fixed inset-0 w-screen h-screen max-w-none max-h-none p-0 m-0 bg-transparent flex items-end justify-center  md:items-center'
             aria-labelledby="modal-title"
             aria-describedby="modal-description">
-            <div className='bg-white w-full max-h-[90vh] p-6 pt-10 rounded-t-2xl grid gap-8 md:max-w-172 md:max-h-172  md:rounded-2xl md:p-10 xl:max-w-148'>
+            <div className='bg-white w-full max-h-full p-6 pt-10 rounded-t-2xl grid gap-8 md:max-w-172 md:max-h-172  md:rounded-2xl md:p-10 xl:max-w-148'>
                 <header className=''>
                     <span className='w-10.5 h-10.5' aria-hidden="true"><IconConfirmed /></span>
                     <h3 id="modal-title" className='text-rose-900 text-preset-1 font-bold leading-tight capitalize'>order confirmed</h3>

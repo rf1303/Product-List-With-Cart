@@ -11,7 +11,6 @@ export const JsonDataProvider = ({ children }) => {
         </JsonDataContext.Provider>
     );
 }
-
 export const useJsonData = () => {
     const context = useContext(JsonDataContext);
     if (!context) {

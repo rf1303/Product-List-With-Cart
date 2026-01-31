@@ -8,7 +8,6 @@ export function useDataJson() {
         const loadData = async () => {
             try {
                 const response = await fetch('./data.json');
-
                 if (!response.ok){
                     throw new Error('Error al Cargar el public/data.json')
                 };
@@ -19,10 +18,8 @@ export function useDataJson() {
                 setError(err.message);
             }
         }
-
         loadData();
     }, [])
-
     if (error) return <p className='text-blue-950 text-3xl'>Error: {error}</p>;
     return { jsonData };
 }

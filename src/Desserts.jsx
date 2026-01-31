@@ -6,8 +6,8 @@ export function Desserts() {
     const { dataProducts } = useJsonData()
 
     return (
-        <main className='relative px-6 grid items-center justify-items-center gap-8 md:px-10 xl:px-0'>
-            <header className='w-full max-w-82.5 text-left'>
+        <section className='relative px-6 grid items-center justify-items-center gap-8 md:px-10 xl:px-0'>
+            <header className='w-full  text-left'>
                 <h1 className='text-rose-900 text-preset-1 font-bold'>Desserts</h1>
             </header>
             <section className='w-full grid crid-cols-1 xs:grid-cols-[repeat(auto-fill,minmax(13.333rem,1fr))] items-center justify-items-center gap-6 xl:grid-cols-[repeat(3,15.667rem)] md:gap-x-6 md:gap-y-8' aria-label="Dessert products">
@@ -31,7 +31,7 @@ export function Desserts() {
                     </div>
                 ))}
             </section>
-        </main>
+        </section>
     );
 
 }
