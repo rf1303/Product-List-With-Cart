@@ -38,8 +38,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://github.com/rf1303/Product-List-With-Cart)
+- Live Site URL: [Add live site URL here](https://product-list-with-cart-react-fm.vercel.app/)
 
 ## My process
 
@@ -107,6 +107,6 @@ export function cartReducer(state, action) {
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Frontend Mentor - [@rf1303](https://www.frontendmentor.io/profile/rf1303)
+- GitHub - [@rf1303](https://github.com/rf1303)
+- Linkedin - [@Ramiro Fernandez](https://www.linkedin.com/in/ramiro-fernandez-260935125/)
