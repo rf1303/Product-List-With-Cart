@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { IconConfirmed, IconRemove } from '../public/assets/svg/IconSvg';
+import { IconConfirmed } from '../public/assets/svg/IconSvg';
 import { useAddCart } from './data-context/UseAddCart.jsx';
 
 export const ConfirmOrderModal = ({ open, onClose }) => {
