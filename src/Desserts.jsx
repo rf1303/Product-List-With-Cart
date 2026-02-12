@@ -17,7 +17,7 @@ export function Desserts() {
                             <picture>
                                 <source srcSet={item.image.desktop} media='(min-width: 80em)' />
                                 <source srcSet={item.image.tablet} media='(min-width: 47.938em)' />
-                                <img src={item.image.desktop} alt={`image of ${item.name}`} className="w-full max-w-82.5 h-53 rounded-xl shadow-md/30 shadow-rose-900 lg:h-60" />
+                                <img src={item.image.desktop} alt={item.name} className="w-full max-w-82.5 h-53 rounded-xl shadow-md/30 shadow-rose-900 lg:h-60" />
                             </picture>
                             <div className='flex items-center justify-center transform -translate-y-1/2'>
                                 <AddCartBtn dataProducts={item} />

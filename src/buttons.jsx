@@ -1,4 +1,4 @@
-import { useAddCart } from './data-context/CartOrderData.jsx';
+import { useAddCart } from './data-context/UseAddCart.jsx';
 import { IconAddCart, IconDecrement, IconIncrement } from '../public/assets/svg/IconSvg.jsx';
 
 
@@ -22,16 +22,14 @@ export function AddCartBtn({ dataProducts }) {
                 <IconAddCart /> Add to Cart
             </button>)
                 : (
-                    <div className='btn__incDec bg-red flex items-center justify-between w-40 h-11 px-3 rounded-full shadow-md/30 shadow-rose-900 hover:bg-red-h focus:bg-red-h ' 
-                         role="group" 
-                         aria-label={`Quantity controls for ${dataProducts.name}, current quantity: ${cartProduct.quantity}`}>
+                    <div className='btn__incDec bg-red flex items-center justify-between w-40 h-11 px-3 rounded-full shadow-md/30 shadow-rose-900 hover:bg-red-h focus:bg-red-h '>
                         <button type="button" onClick={ handleDecrement }
                             className='increment__decrement'
-                            aria-label={`Remove one ${dataProducts.name} from cart`}><IconDecrement /></button>
+                            aria-label={`Remove one ${dataProducts.name} from cart`}><IconDecrement aria-hidden="true" /></button>
                         <span className='text-preset-4 text-white font-semibold' aria-live="polite" aria-atomic="true">{cartProduct.quantity}</span>
                         <button type="button" onClick={ handleIncrement }
                             className='increment__decrement'
-                            aria-label={`Add one more ${dataProducts.name} to cart`}><IconIncrement /></button>
+                            aria-label={`Add one more ${dataProducts.name} to cart`}><IconIncrement aria-hidden="true" /></button>
                     </div>
                 )}
         </>

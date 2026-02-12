@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { IconConfirmed, IconRemove } from '../public/assets/svg/IconSvg';
-import { useAddCart } from './data-context/CartOrderData.jsx';
+import { useAddCart } from './data-context/UseAddCart.jsx';
 
 export const ConfirmOrderModal = ({ open, onClose }) => {
     const confirmModalRef = useRef(null)
@@ -34,26 +34,26 @@ export const ConfirmOrderModal = ({ open, onClose }) => {
                     <h3 id="modal-title" className='text-rose-900 text-preset-1 font-bold leading-tight capitalize'>order confirmed</h3>
                     <p id="modal-description" className='text-rose-500 text-preset-3 font-normal'>We hope you enjoy your food!</p>
                 </header>
-                <div className='bg-rose-50 p-6 rounded-xl' role="region" aria-label="Order summary">
-                    <div className='divide-y divide-rose-100 max-h-72 overflow-y-auto xl:max-h-74' role="list" aria-label="Ordered items">
+                <div className='bg-rose-50 p-6 rounded-xl' aria-label="Order summary">
+                    <ul className='divide-y divide-rose-100 max-h-72 overflow-y-auto xl:max-h-74' aria-label="Ordered items">
                         {state.items.map(item => (
-                            <div key={item.id} className='py-2 flex items-center justify-between ' role="listitem">
-                                <img src={item.image.thumbnail} alt={`${item.name} dessert`}
+                            <li key={item.id} className='py-2 flex items-center justify-between '>
+                                <img src={item.image.thumbnail} alt={item.name}
                                     className='w-12 h-12 rounded-lg' />
                                 <div className='text-preset-4 font-semibold grid gap-2'>
-                                    <h3 className='text-preset-4 text-rose-900 '>{item.name}</h3>
+                                    <p className='text-preset-4 text-rose-900 '>{item.name}</p>
                                     <div className='flex items-center justify-start gap-2'>
                                         <span className='text-red'>{item.quantity}x</span>
                                         <span className='text-rose-500 font-normal'>@ ${item.price.toFixed(2)}</span>
                                     </div>
                                 </div>
                                 <span className='text-rose-500'>${(item.price * item.quantity).toFixed(2)}</span>
-                            </div>
+                            </li>
 
                         ))}
 
-                    </div>
-                    <div className='w-full h-px bg-rose-100'></div>
+                    </ul>
+                    <div className='w-full h-px bg-rose-100' role='separator'></div>
                     <div className='flex items-center justify-between'>
                         <span className='text-preset-4 text-rose-900 capitalize'>order total</span>
                         <span className='text-preset-2 font-bold text-rose-900'>
