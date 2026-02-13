@@ -21,7 +21,7 @@ export function YourAddCart() {
             </header>
             <ul className='divide-y divide-rose-100 max-h-103 overflow-y-auto' aria-label="Cart items">
                 {state.items.length === 0 ? (
-                    <div className='grid items-center justify-items-center gap-4'>
+                    <div role="status" className='grid items-center justify-items-center gap-4'>
                         <IconEmptyCart aria-hidden="true" />
                         <p className='text-preset-4 text-rose-500'>Your added items will appear here</p>
                     </div>

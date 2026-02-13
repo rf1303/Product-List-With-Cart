@@ -12,8 +12,8 @@ export function Desserts() {
             </header>
             <section className='w-full grid crid-cols-1 xs:grid-cols-[repeat(auto-fill,minmax(13.333rem,1fr))] items-center justify-items-center gap-6 xl:grid-cols-[repeat(3,15.667rem)] md:gap-x-6 md:gap-y-8' aria-label="Dessert products">
                 {dataProducts.map((item) => (
-                    <div key={item.id} className='w-full max-w-82.5'>
-                        <div className=''>
+                    <article key={item.id} className='w-full max-w-82.5'>
+                        <div>
                             <picture>
                                 <source srcSet={item.image.desktop} media='(min-width: 80em)' />
                                 <source srcSet={item.image.tablet} media='(min-width: 47.938em)' />
@@ -28,7 +28,7 @@ export function Desserts() {
                             <p className='text-rose-900 text-preset-3 font-semibold'>{item.name}</p>
                             <p className='text-red text-preset-3 font-semibold'>${item.price.toFixed(2)}</p>
                         </div>
-                    </div>
+                    </article>
                 ))}
             </section>
         </section>

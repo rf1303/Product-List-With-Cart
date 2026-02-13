@@ -16,6 +16,7 @@ export const ConfirmOrderModal = ({ open, onClose }) => {
         if (!confirm) return;
         if (open && !confirm.open) {
             confirm.showModal();
+            confirm.querySelector('button')?.focus();
         }
         if (!open && confirm.open) {
             confirm.close();
